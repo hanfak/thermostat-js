@@ -59,9 +59,9 @@ describe("Thermostat", function() {
   });
 
   it("displays the status of PowerSaveMode", function() {
-    expect(thermostat.powerSaveStatus()).toBe(true);
+    expect(thermostat.powerSaveStatus()).toBe("ON");
     thermostat.powerSaveModeOff();
-    expect(thermostat.powerSaveStatus()).toBe(false);
+    expect(thermostat.powerSaveStatus()).toBe("OFF");
   });
 
 

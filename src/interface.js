@@ -13,4 +13,20 @@ $( document ).ready(function() {
     $( "#temperature" ).html( thermostat.temperature() );
   });
 
+  $( "#temperature-powersavemodeon" ).on( "click", function( event ) {
+    thermostat.powerSaveModeOn();
+    $( "#powersavestatus" ).html( thermostat.powerSaveStatus() );
+    $( "#temperature" ).html( thermostat.temperature() );
+  });
+
+  $( "#temperature-powersavemodeoff" ).on( "click", function( event ) {
+    thermostat.powerSaveModeOff();
+    $( "#powersavestatus" ).html( thermostat.powerSaveStatus() );
+  });
+
+  $( "#temperature-reset" ).click(function() {
+    thermostat.reset();
+    $( "#temperature" ).html( thermostat.temperature() );
+  });
+
 });
