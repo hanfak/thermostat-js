@@ -5,6 +5,7 @@ $( document ).ready(function() {
   updateDisplay = function() {
     $( "#temperature" ).html( thermostat.temperature() );
     $( "#powersavestatus" ).html( thermostat.powerSaveStatus() );
+    $( "#energy-usage" ).css( "color", thermostat.energyUsage() );
   }
 
   updateDisplay();
