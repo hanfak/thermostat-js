@@ -1,0 +1,37 @@
+
+
+* {
+  border:1px dashed red;
+}
+
+.low-usage {
+  position: absolute;
+  background-color: green;
+  width:300px; 
+  height:250px; 
+  margin:auto;
+  margin-top: 20%;
+}
+
+.med-usage {
+  background-color:yellow;
+  width:300px; 
+  height:250px; 
+  margin:auto;
+  margin-top: 20%;
+}
+
+.high-usage {
+  background-color:red;
+  width:300px; 
+  height:250px; 
+  margin:auto;
+  margin-top: 20%;
+}
+
+#temperature {
+  
+  top:50%;
+  left:50%;
+
+} 
