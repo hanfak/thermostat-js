@@ -1,12 +1,11 @@
 $( document ).ready(function() {
 
-  $( "button" ).click(function( event ) {
+  var thermostat = new Thermostat();
+  $( "#temperature" ).html( thermostat.temperature() )
 
-    event.preventDefault();
-
-    $( this ).hide( "slow" );
-
-
+  $( "#temperature-increase" ).on( "click", function( event ) {
+    thermostat.increase();
+    $( "#temperature" ).html( thermostat.temperature() );
   });
 
 });
