@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thermographicological Temperature Device</title>
+  <script src="./src/thermostat.js"></script>
+</head>
+<body>
+  <section>
+    <h1>Inputs</h1>
+    <div>
+      <button id="temperature-increase">Up</button>
+      <button id="temperature-decrease">Down</button>
+    </div>
+    <div>
+      <button id="temperature-powersavemodeon">PSM on</button>
+      <button id="temperature-powersavemodeoff">PSM off</button>
+    </div>
+    <div>
+      <button id="temperature-reset">Reset</button>
+    </div>
+  </div>
+
+  <div>
+    <h1>Outputs</h1>
+    <div>
+      <h2 id="temperature"></h2>
+    </div>
+    <div>
+      <h2 id="energy-usage"></h2>
+    </div>
+    <div>
+      <h2>PowerSaveMode: <span id="power-save-mode">on</span></h2>
+    </div>
+  </section>
+
+</body>
+</html>
