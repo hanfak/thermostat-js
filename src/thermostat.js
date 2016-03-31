@@ -1,22 +1,24 @@
+"use strict";
+
 function Thermostat() {
   this.DEFAULT_TEMPERATURE = 20;
-  this.currentTemp = this.DEFAULT_TEMPERATURE;
+  this.currentTemperature = this.DEFAULT_TEMPERATURE;
   this.minTemp = 10;
   this.maxTemp = 25;
 }
 
 Thermostat.prototype.increase = function() {
-  if (this.currentTemp >= this.maxTemp) {
+  if (this.aboveMaxTemperature()) {
     throw new Error("max temp reached")
   }
-  this.currentTemp++;
+  this.currentTemperature++;
 }
 
 Thermostat.prototype.decrease = function() {
-  if (this.currentTemp <= this.minTemp) {
+  if (this.belowMinTemperature()) {
     throw new Error("min temp reached!")
   }
-  this.currentTemp--;
+  this.currentTemperature--;
 }
 
 Thermostat.prototype.powerSaveModeOn = function() {
@@ -28,18 +30,30 @@ Thermostat.prototype.powerSaveModeOff = function() {
 }
 
 Thermostat.prototype.reset = function() {
-  this.currentTemp = this.DEFAULT_TEMPERATURE;
+  this.currentTemperature = this.DEFAULT_TEMPERATURE;
 }
 
 Thermostat.prototype.energyUsage = function() {
   switch(true) {
-    case (this.currentTemp >= 25):
+    case (this.temperature() >= 25):
       return "red";
       break;
-    case (this.currentTemp >= 18):
+    case (this.temperature() >= 18):
       return "yellow";
       break;
     default:
       return "green";
   }
+}
+
+Thermostat.prototype.temperature = function() {
+  return this.currentTemperature;
+}
+
+Thermostat.prototype.aboveMaxTemperature = function() {
+  return this.currentTemperature >= this.maxTemp;
+}
+
+Thermostat.prototype.belowMinTemperature = function() {
+  return this.temperature() <= this.minTemp;
 }
