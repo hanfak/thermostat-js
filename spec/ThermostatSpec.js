@@ -60,23 +60,23 @@ describe("Thermostat", function(){
     })
   });
 
-  describe('#temperatureColour', function() {
+  describe('#energyUsage', function() {
     it('tells low-usage', function() {
       for(i=1; i <=5; i++){
         thermostat.decreaseTemperature();
       }
-      expect(thermostat.temperatureColour()).toEqual('low-usage')
+      expect(thermostat.energyUsage()).toEqual('low-usage')
     })
 
     it('tells med-usage', function() {
-      expect(thermostat.temperatureColour()).toEqual('med-usage')
+      expect(thermostat.energyUsage()).toEqual('med-usage')
     })
 
     it('tells hi-usage', function() {
       for(i=1; i <=5; i++){
         thermostat.increaseTemperature();
       }
-      expect(thermostat.temperatureColour()).toEqual('hi-usage')
+      expect(thermostat.energyUsage()).toEqual('hi-usage')
     })
 
 

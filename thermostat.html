@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href='styles.css'>
+    <link rel="stylesheet" href='src/styles.css'>
     <title> Thermostat </title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <head>
   <body>
-    <dashboard>
-      <h1 id="temperature">20</h1>
-      <h2 id="powerSave">On</h2>
-    </dashboard>
-      <controls>
+    <section id='main'>
+      <section id='dashboard'>
+        <h1 id="temperature">20</h1>
+        <h2 id="powerSave">On</h2>
+      </section>
+      <section id='controls'>
         <button id="increaseTemperature">+</button>
         <button id="decreaseTemperature">-</button>
         <button id="powerSaveSwitch">Power Save</button>
         <button id="resetTemperature">Reset</button>
-      </controls>
-
-  <script src="interface.js"></script>
-  <script src="thermostat.js"></script>
+      </section>
+    <section>
+  <script src="src/interface.js"></script>
+  <script src="src/thermostat.js"></script>
 </body>
 </html>

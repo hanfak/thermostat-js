@@ -9,7 +9,7 @@ const MINIMUM_TEMPERATURE = 10;
   Thermostat.prototype.getCurrentTemperature = function () {
     return this.temperature;
   };
-
+// test
   Thermostat.prototype.powerSaveStatus = function () {
     if (this.powerSave === true) {
       return 'On';
@@ -45,7 +45,7 @@ const MINIMUM_TEMPERATURE = 10;
     this.temperature = DEFAULT_TEMPERATURE;
   };
 
-  Thermostat.prototype.temperatureColour = function () {
+  Thermostat.prototype.energyUsage = function () {
     if (this.getCurrentTemperature() < 18) {
       return 'low-usage';
     }

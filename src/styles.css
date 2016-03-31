@@ -1,3 +1,85 @@
+body {
+  background-color: grey;
+}
+
+section#main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+section#dashboard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -150%);
+}
+#temperature {
+  font-size: 50px;
+}
+
+button {
+  display:inline-block;
+  width:100px; /*same as the height*/
+  height:100px; /*same as the width*/
+  background-color:#ff0000;
+  border:1px solid #ff0000; /*same colour as the background*/
+  color:#fff;
+  font-size:1.6em;
+  /*set the border-radius at half the size of the width and height*/
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  /*give the button a small drop shadow*/
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+  box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+}
+
+button#powerSaveSwitch {
+  width: 180px;
+  padding: 4px 20px;
+  /*give the background a gradient*/
+  background:#ffae00; /*fallback for browsers that don't support gradients*/
+  /*background: -webkit-linear-gradient(top, #ffae00, #d67600);
+  background: -moz-linear-gradient(top, #ffae00, #d67600);
+  background: -o-linear-gradient(top, #ffae00, #d67600);
+  background: linear-gradient(top, #ffae00, #d67600);*/
+  border:2px outset #dad9d8;
+  /*style the text*/
+  font-family:Andika, Arial, sans-serif; /*Andkia is available at http://www.google.com/webfonts/specimen/Andika*/
+  font-size:1.1em;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:#fff;
+  text-shadow: 0px 1px 10px #000;
+  /*add to small curve to the corners of the button*/
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  /*give the button a drop shadow*/
+  -webkit-box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+  -moz-box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+  box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+}
+
+#powerSaveSwitch {
+    background: blue;
+    color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+#powerSaveSwitch:active {
+  background: red;
+  color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
 .low-usage {
   color: #03e823;
 }

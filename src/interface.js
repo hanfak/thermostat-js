@@ -2,10 +2,11 @@ $(document).ready(function(){
 
   var thermostat = new Thermostat;
   updateDisplay();
-function updateDisplay() {
-  $('#temperature').text(thermostat.getCurrentTemperature());
-  $('#temperature').attr('class', thermostat.temperatureColour());
-};
+
+  function updateDisplay() {
+    $('#temperature').text(thermostat.getCurrentTemperature());
+    $('#temperature').attr('class', thermostat.energyUsage());
+  };
 
   $('#increaseTemperature').on('click', function() {
     thermostat.increaseTemperature();
@@ -18,6 +19,7 @@ function updateDisplay() {
   });
 
   $('#powerSaveSwitch').on('click', function() {
+    $(this).css({"background-color":"grey"});
     thermostat.powerSaveSwitch();
     $('#powerSave').text(thermostat.powerSaveStatus());
   });
