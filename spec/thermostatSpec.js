@@ -58,6 +58,14 @@ describe("Thermostat", function() {
     expect(thermostat.maxTemp).toEqual(32);
   });
 
+  it("displays the status of PowerSaveMode", function() {
+    expect(thermostat.powerSaveStatus()).toBe(true);
+    thermostat.powerSaveModeOff();
+    expect(thermostat.powerSaveStatus()).toBe(false);
+  });
+
+
+
   it("allows the temperature to be reset to default", function() {
     thermostat.increase();
     thermostat.reset();
