@@ -42,9 +42,9 @@ Thermostat.prototype.tempReset = function() {
 }
 
 Thermostat.prototype.displayColor = function() {
-  if(this.temperature <= 18) {return 'green';}
-  if(this.temperature <= 25) {return 'yellow';}
-  if(this.temperature > 25) {return 'red';}
+  if(this.temperature <= 18) {return 'low-usage';}
+  if(this.temperature <= 25) {return 'med-usage';}
+  if(this.temperature > 25) {return 'high-usage';}
 }
 
 
