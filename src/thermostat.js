@@ -41,10 +41,10 @@ Thermostat.prototype.tempReset = function() {
     this.temperature = 20;
 }
 
-Thermostat.prototype.displayColor = function() {
-  if(this.temperature <= 18) {return 'low-usage';}
-  if(this.temperature <= 25) {return 'med-usage';}
-  if(this.temperature > 25) {return 'high-usage';}
+Thermostat.prototype.energyUsage = function() {
+  if(this.temperature < 18) {return 'low-usage';}
+  if(this.temperature < 25) {return 'med-usage';}
+  return 'high-usage'
 }
 
 

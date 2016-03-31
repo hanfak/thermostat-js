@@ -71,17 +71,17 @@ describe('Thermostat', function() {
 
     it('green when current temperature is <=18', function(){
       thermostat.temperature = 16
-      expect(thermostat.displayColor()).toEqual('green');
+      expect(thermostat.energyUsage()).toEqual('low-usage');
     })
 
     it('yellow when current temperature is > 18 <= 25', function(){
       thermostat.temperature = 22
-      expect(thermostat.displayColor()).toEqual('yellow');
+      expect(thermostat.energyUsage()).toEqual('med-usage');
     })
 
     it('red when current temperature is > 25 ', function(){
       thermostat.temperature = 28
-      expect(thermostat.displayColor()).toEqual('red');
+      expect(thermostat.energyUsage()).toEqual('high-usage');
     })
 
   })
