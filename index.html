@@ -12,16 +12,23 @@
   <section>
   <div id="display">
     <h1 id="temperature"></h1>
-
-        
-      
-      
         
           <button  id='up'>+</button>
           <button  id='down'>-</button>
           <button  id='reset'>RESET</button>
           <button  id='mode'>MODE ON/OFF</button>
+  
+          <section>
+            <h2> Current temperature: <span id="current_temperature"></span> </h2>
+            <h2> Current location: <span id="location"></span></h2>
 
+              <section>
+                <form id="select-city">
+                  <input id="current-city" type="text" placeholder="Enter a city">
+                  <input type="submit">
+                </form>
+              </section>
+          </section>
       </div>
     </section>
 
