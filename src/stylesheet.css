@@ -2,15 +2,3 @@ body {
   text-align: center;
   font-family: verdana;
 }
-
-.green-status {
-  font-style: green;
-}
-
-.yellow-status {
-  font-style: yellow;
-}
-
-.red-status {
-  font-style: red;
-}
