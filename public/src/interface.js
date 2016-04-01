@@ -1,19 +1,25 @@
 $( document ).ready(function() {
 
   var thermostat = new Thermostat();
-  var   cookieData = $.getJSON( "/temperature");
+  var storedTemperature;
 
   updateDisplay = function() {
-    console.log(cookieData.responseJSON)
-    var numberXXX = Number(cookieData.responseJSON)
-    thermostat.currentTemperature = 23;//Number(cookieData.responseJSON.temperature) // || thermostat.temperature())
     $( "#temperature" ).html( thermostat.temperature() );
     $( "#powersavestatus" ).html( thermostat.powerSaveStatus() );
     $( "#energy-usage" ).css( "color", thermostat.energyUsage() );
-    $.post( 'temperature', { temperature: thermostat.temperature() } );
+
+    $.post( 'temperature', { temperature: thermostat.temperature(),
+       powerSaveMode: thermostat.powerSaveStatus()
+    });
   }
 
-  updateDisplay();
+  $.getJSON( "/temperature.json", function(data) {
+    storedTemperature = data.temperature;
+    storedPowerSaveMode = data.powerSaveMode;
+    thermostat.currentTemperature = storedTemperature || thermostat.temperature();
+    thermostat.powerSaveSwitch = storedPowerSaveMode || thermostat.powerSaveStatus();
+    updateDisplay();
+  });
 
   $( "#temperature-increase" ).on( "click", function( event ) {
     thermostat.increase();
@@ -39,5 +45,4 @@ $( document ).ready(function() {
     thermostat.reset();
     updateDisplay();
   });
-
 });
