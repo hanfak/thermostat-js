@@ -1,11 +1,12 @@
 $( document ).ready(function() {
 
-  var thermostat = new Thermostat();
+  thermostat = new Thermostat();
 
   updateDisplay = function() {
     $( "#temperature" ).html( thermostat.temperature() );
     $( "#powersavestatus" ).html( thermostat.powerSaveStatus() );
     $( "#energy-usage" ).css( "color", thermostat.energyUsage() );
+    $.post( 'temperature', { temperature: thermostat.temperature() } );
   }
 
   updateDisplay();
