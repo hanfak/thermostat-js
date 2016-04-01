@@ -1,8 +1,12 @@
 $( document ).ready(function() {
 
-  thermostat = new Thermostat();
+  var thermostat = new Thermostat();
+  var   cookieData = $.getJSON( "/temperature");
 
   updateDisplay = function() {
+    console.log(cookieData.responseJSON)
+    var numberXXX = Number(cookieData.responseJSON)
+    thermostat.currentTemperature = 23;//Number(cookieData.responseJSON.temperature) // || thermostat.temperature())
     $( "#temperature" ).html( thermostat.temperature() );
     $( "#powersavestatus" ).html( thermostat.powerSaveStatus() );
     $( "#energy-usage" ).css( "color", thermostat.energyUsage() );
